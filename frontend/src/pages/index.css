@@ -1,0 +1,17 @@
+/* src/index.css */
+
+/* Reset html/body margins and ensure full height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* light gray fallback */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+}
+
+/* Ensure every element uses border-box sizing */
+* {
+  box-sizing: border-box;
+}

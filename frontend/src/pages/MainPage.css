@@ -1,0 +1,104 @@
+/* src/pages/MainPage.css */
+
+/* 1) Define the NavBar height exactly—must match NavBar.css */
+:root {
+  --navbar-height: 64px; /* ← Must match .navbar height */
+}
+
+/* 2) Reset html/body to ensure no extra margins around the flex container */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* fallback */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+}
+
+/* 3) main-container wraps the fixed NavBar + content below */
+.main-container {
+  position: relative;
+  width: 100vw;      /* full viewport width */
+  height: 100vh;     /* full viewport height */
+  overflow: hidden;  /* no overflow scrollbars */
+}
+
+/* 4) NavBar is fixed at top, height = var(--navbar-height) */
+/*    (see NavBar.css for .navbar { height: 64px; }) */
+
+/* 5) main-content is absolutely positioned below the NavBar */
+.main-content {
+  position: absolute;
+  top: var(--navbar-height); /* start exactly below the NavBar */
+  left: 0;
+  right: 0;
+  bottom: 0;                /* extend to the bottom of viewport */
+  display: flex;
+  justify-content: center;  /* center card horizontally */
+  align-items: center;      /* center card vertically */
+  background-color: #f5f5f5; /* same as body */
+  box-sizing: border-box;   /* include padding/border in width/height */
+}
+
+/* 6) White card inside main-content, centered */
+.content-card {
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1.5rem;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* 7) Heading inside the card */
+.content-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* 8) Subtext below the heading */
+.content-subtext {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: #555555;
+}
+
+/* 9) Full‐width button inside the card */
+.primary-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff; /* blue accent */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.primary-button:hover {
+  background-color: #0056b3;
+}
+.primary-button:active {
+  transform: translateY(2px);
+}
+
+/* 10) Responsive adjustment for very small screens */
+@media (max-width: 400px) {
+  .content-card {
+    width: 90%;
+    padding: 1.5rem 1rem;
+  }
+  .content-heading {
+    font-size: 1.75rem;
+  }
+  .primary-button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}

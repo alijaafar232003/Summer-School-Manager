@@ -1,0 +1,82 @@
+/* src/components/NavBar.css */
+
+/* Ensure no global padding/margin issues */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Top navigation bar: always 100% width */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;           /* TAKE FULL WIDTH */
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 64px;          /* Adjust if your Navbar is taller/shorter */
+  background-color: #ffffff;
+  display: flex;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;       /* Inner padding on left/right */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* Logo on the left */
+.navbar-left .navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2a44;
+  cursor: pointer;
+}
+
+/* Center navigation links (if you need them; you can remove this block if unused) */
+.navbar-center {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1f2a44;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: #394867;
+}
+
+/* Right side: welcome text + logout */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-text {
+  font-size: 0.95rem;
+  color: #1f2a44;
+  font-weight: 500;
+}
+
+/* Logout button */
+.logout-button {
+  background-color: #1f2a44;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.logout-button:hover {
+  background-color: #394867;
+}
+.logout-button:active {
+  transform: translateY(1px);
+}
